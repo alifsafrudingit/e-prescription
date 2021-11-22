@@ -90,12 +90,6 @@
 
                 $('tbody').append(_tr);
             });
-            
-            $('#store').click(function() {
-                let j_obat = $('td[name="j_obat"]').val();
-                let j_signa = $('td[name="j_signa"]').val();
-                let j_qty = $('td[name="j_qty"]').val();
-            });
         });
     </script>
 @endpush
