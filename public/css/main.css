@@ -158,7 +158,8 @@ body {
 .btn-master,
 .btn-thirdty,
 .btn-primary,
-.btn-secondary {
+.btn-success,
+.btn-warning .btn-secondary {
     padding: 11px 36px 11px 36px;
     border-radius: 100px;
     border: 0;

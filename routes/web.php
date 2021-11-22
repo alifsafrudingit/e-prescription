@@ -18,22 +18,16 @@ use App\Http\Controllers\ResepNonRacikController;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('landing-page');
+})->name('welcome');
 
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
-Route::get('/resep-non-racik', function () {
-    return view('resepNonRacik');
-})->name('resep-non-racik');
-
-Route::get('/resep-racik', function () {
-    return view('resepRacik');
-})->name('resep-racik');
-
-Route::get('resep-non-racik', [ResepNonRacikController::class, 'create'])->name('resep-non-racik');
-Route::get('resep-racik', [ResepRacikController::class, 'create'])->name('resep-racik');
+Route::get('resep-non-racik', [ResepNonRacikController::class, 'create'])->name('resep-non-racik.create');
+Route::post('checkout', [ResepNonRacikController::class, 'store'])->name('checkout.store');
+Route::get('resep-racik', [ResepRacikController::class, 'create'])->name('resep-racik.create');
+Route::post('resep-racik', [ResepRacikController::class, 'store'])->name('resep-racik.store');
 
 Route::get('obat', [ObatController::class, 'obat'])->name('obat');
 

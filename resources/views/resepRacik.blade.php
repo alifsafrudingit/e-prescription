@@ -20,11 +20,20 @@
                         <form action="#" class="basic-form">
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Pilih Obat Diracik</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <select class="form-control" id="select2-obat" data-dropdown-css-class="select2-purple" name="obat[]" multiple="multiple" data-placeholder="Pilih Obat">
+                                    @foreach ($data['obat'] as $obat )
+                                    <option value="{{ $obat['obatalkes_nama'] }}">{{ $obat['obatalkes_nama'] }}</option>
+                                    @endforeach
+                                  </select>
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Pilih Signa</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <select name="signa" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                    <option value="">- Pilih Signa -</option>
+                                    @foreach ($data_signa as $signa)
+                                    <option value="{{ $signa->signa_nama }}">{{ $signa->signa_nama }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label">Nama Racikan</label>

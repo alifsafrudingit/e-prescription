@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Obat;
+use App\Models\Signa;
 use Illuminate\Http\Request;
 
 class ResepRacikController extends Controller
@@ -23,7 +25,9 @@ class ResepRacikController extends Controller
      */
     public function create()
     {
-        return view('resepRacik');
+        $data['obat'] = Obat::all();
+        $data_signa = Signa::all();
+        return view('resepRacik', compact('data', 'data_signa'));
     }
 
     /**
